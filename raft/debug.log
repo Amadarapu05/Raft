@@ -1,0 +1,1291 @@
+=== RUN   TestInitialElection3A
+21:00:24.307823 S0 Make: Follower peers=3
+21:00:24.308638 S1 Make: Follower peers=3
+21:00:24.308789 S2 Make: Follower peers=3
+Test (3A): initial election ...
+21:00:24.720863 S1 startElection -> Candidate term=1 lastLog=(0,0) votes=1
+21:00:24.722260 S0 RequestVote adopt term 0 -> 1 (was Follower) cand=1
+21:00:24.722303 S0 RequestVote GRANT cand=1 term=1 (my lastIdx=0 lastTerm=0)
+21:00:24.722267 S2 RequestVote adopt term 0 -> 1 (was Follower) cand=1
+21:00:24.722354 S2 RequestVote GRANT cand=1 term=1 (my lastIdx=0 lastTerm=0)
+21:00:24.722623 S1 got vote from S0 votes=2/3 term=1
+21:00:24.722645 S1 WON ELECTION -> Leader term=1
+21:00:24.722664 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:24.723333 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:24.723338 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:24.723625 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:24.723650 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:24.831327 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:24.832124 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:24.832119 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:24.832361 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:24.832383 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:24.942431 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:24.943247 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:24.943250 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:24.943503 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:24.943533 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.055689 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.056618 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.056683 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.056894 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.056913 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.167642 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.168493 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.168661 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.168737 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.168889 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.280709 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.281637 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.281682 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.283011 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.283155 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.391689 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.392666 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.392661 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.393036 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.393079 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.503020 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.503957 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.503997 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.504296 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.504334 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.614661 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.617101 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.617739 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.617959 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.618323 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.726583 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.727734 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.728335 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.728566 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.728599 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.837780 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.838640 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.838697 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.839062 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:25.839119 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.948760 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:25.949531 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.949539 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:25.949867 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:25.949896 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.060110 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.060650 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.060678 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.060875 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.060908 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.171713 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.172073 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.172069 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.172214 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.172226 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.282790 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.283100 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.283096 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.283227 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.283243 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.392900 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.393254 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.393267 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.393407 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.393427 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.504146 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.504752 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.504776 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.505019 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.505046 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.616265 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.617055 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.617076 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.617368 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.617396 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.725934 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.726756 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.726774 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.727146 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.727199 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.836701 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.837544 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.837550 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.837869 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.837919 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:26.947856 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:26.948906 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.949034 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:26.949171 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:26.949238 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:27.059007 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:27.059718 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.059731 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.060010 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:27.060036 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:27.169717 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:27.170432 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.170444 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.170690 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:27.170716 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:27.281184 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:27.281948 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.281959 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.282284 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:27.282324 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+  ... Passed --   3.0  3   50   12894    0
+21:00:27.345687 S0 Kill()
+21:00:27.345996 S1 Kill()
+21:00:27.346052 S2 Kill()
+--- PASS: TestInitialElection3A (3.04s)
+=== RUN   TestReElection3A
+21:00:27.347047 S0 Make: Follower peers=3
+21:00:27.347381 S1 Make: Follower peers=3
+21:00:27.347626 S2 Make: Follower peers=3
+Test (3A): election after network failure ...
+21:00:27.902047 S0 startElection -> Candidate term=1 lastLog=(0,0) votes=1
+21:00:27.902047 S1 startElection -> Candidate term=1 lastLog=(0,0) votes=1
+21:00:27.902748 S2 RequestVote adopt term 0 -> 1 (was Follower) cand=1
+21:00:27.902796 S2 RequestVote GRANT cand=1 term=1 (my lastIdx=0 lastTerm=0)
+21:00:27.902748 S0 RequestVote DENY cand=1 term=1: voted for other
+21:00:27.903046 S2 RequestVote DENY cand=0 term=1: voted for other
+21:00:27.903151 S1 RequestVote no grant from S0 term=1 (replyTerm=1)
+21:00:27.903184 S1 got vote from S2 votes=2/3 term=1
+21:00:27.903208 S1 WON ELECTION -> Leader term=1
+21:00:27.903221 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:27.903330 S0 RequestVote no grant from S2 term=1 (replyTerm=1)
+21:00:27.903709 S0 step down to Follower (AppendEntries) term=1 leader=1
+21:00:27.903749 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.903713 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:27.904022 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:27.904067 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:27.904324 S1 RequestVote DENY cand=0 term=1: voted for other
+21:00:28.005791 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.006106 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.006111 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.006233 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:28.006250 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:28.116189 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.116693 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.116691 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.116914 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:28.116990 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:28.227728 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.228473 S2 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.228476 S0 AppendEntries OK leader=1 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.228791 S1 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:28.228836 S1 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:28.338486 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.340327 S1 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:28.374832 S1 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:28.449288 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.476066 S1 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:28.499347 S1 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:28.559339 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.627236 S1 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:28.645541 S1 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:28.653107 S2 startElection -> Candidate term=2 lastLog=(0,0) votes=1
+21:00:28.653539 S0 RequestVote adopt term 1 -> 2 (was Follower) cand=2
+21:00:28.653565 S0 RequestVote GRANT cand=2 term=2 (my lastIdx=0 lastTerm=0)
+21:00:28.653801 S2 got vote from S0 votes=2/3 term=2
+21:00:28.653825 S2 WON ELECTION -> Leader term=2
+21:00:28.653839 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:28.654282 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.654503 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:28.655273 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:28.668759 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.695195 S1 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:28.704488 S1 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:28.762670 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:28.763008 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.763138 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:28.778706 S1 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 2 peers
+21:00:28.792037 S1 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:28.795861 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:28.848777 S1 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:28.873799 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:28.874324 S1 AppendEntries adopt higher term 1 -> 2 (was Leader) leader=2
+21:00:28.874350 S1 step down to Follower (AppendEntries) term=2 leader=2
+21:00:28.874323 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.874367 S1 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.874573 S2 appendEntries -> S1 ok term=2 success=true replyTerm=2
+21:00:28.874595 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:28.984109 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:28.984928 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.985068 S1 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:28.985330 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:28.985382 S2 appendEntries -> S1 ok term=2 success=true replyTerm=2
+21:00:29.096268 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.097062 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:29.097072 S1 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:29.097401 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:29.097442 S2 appendEntries -> S1 ok term=2 success=true replyTerm=2
+21:00:29.205414 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.206322 S1 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:29.206324 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:29.206660 S2 appendEntries -> S1 ok term=2 success=true replyTerm=2
+21:00:29.206723 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:29.317167 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.318344 S0 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:29.318381 S1 AppendEntries OK leader=2 term=2 prev=(0,0) appended=0 lastLogIdx=0
+21:00:29.318813 S2 appendEntries -> S1 ok term=2 success=true replyTerm=2
+21:00:29.318980 S2 appendEntries -> S0 ok term=2 success=true replyTerm=2
+21:00:29.428244 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.451611 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:29.512307 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:29.540703 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.550664 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:29.636546 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:29.652539 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.724986 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:29.766164 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:29.766149 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.797939 S0 startElection -> Candidate term=3 lastLog=(0,0) votes=1
+21:00:29.809114 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:29.843017 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:29.876694 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:29.887136 S0 RequestVote RPC failed to S1 term=3 (network/timeout)
+21:00:29.897744 S0 RequestVote RPC failed to S2 term=3 (network/timeout)
+21:00:29.908319 S1 startElection -> Candidate term=3 lastLog=(0,0) votes=1
+21:00:29.943713 S1 RequestVote RPC failed to S2 term=3 (network/timeout)
+21:00:29.948014 S1 RequestVote RPC failed to S0 term=3 (network/timeout)
+21:00:29.951287 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:29.975420 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:29.986468 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.061081 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.082065 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.098070 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.115792 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.180969 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.209616 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.223999 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.260386 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.287997 S0 startElection -> Candidate term=4 lastLog=(0,0) votes=1
+21:00:30.319352 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.319421 S0 RequestVote RPC failed to S1 term=4 (network/timeout)
+21:00:30.320791 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.363362 S0 RequestVote RPC failed to S2 term=4 (network/timeout)
+21:00:30.414993 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.429759 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.440316 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.440344 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.461095 S1 startElection -> Candidate term=4 lastLog=(0,0) votes=1
+21:00:30.477657 S1 RequestVote RPC failed to S0 term=4 (network/timeout)
+21:00:30.520531 S1 RequestVote RPC failed to S2 term=4 (network/timeout)
+21:00:30.540704 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.565218 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.590927 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.652854 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.672509 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.689613 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.732590 S0 startElection -> Candidate term=5 lastLog=(0,0) votes=1
+21:00:30.764604 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.783090 S0 RequestVote RPC failed to S2 term=5 (network/timeout)
+21:00:30.814039 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.823790 S0 RequestVote RPC failed to S1 term=5 (network/timeout)
+21:00:30.853281 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.875914 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.907983 S1 startElection -> Candidate term=5 lastLog=(0,0) votes=1
+21:00:30.914405 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:30.932165 S1 RequestVote RPC failed to S0 term=5 (network/timeout)
+21:00:30.960897 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:30.971370 S1 RequestVote RPC failed to S2 term=5 (network/timeout)
+21:00:30.986418 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:30.986843 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.076287 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.097899 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.114226 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.150945 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.177594 S0 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:31.209672 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.247616 S0 RequestVote RPC failed to S1 term=6 (network/timeout)
+21:00:31.256040 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.277620 S0 RequestVote RPC failed to S2 term=6 (network/timeout)
+21:00:31.288127 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.319664 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.355923 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.366915 S1 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:31.367489 S0 RequestVote DENY cand=1 term=6: voted for other
+21:00:31.367779 S1 RequestVote no grant from S0 term=6 (replyTerm=6)
+21:00:31.413293 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.429303 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.430859 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.448663 S1 RequestVote RPC failed to S2 term=6 (network/timeout)
+21:00:31.500633 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.540624 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.623425 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.624109 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.636211 S0 startElection -> Candidate term=7 lastLog=(0,0) votes=1
+21:00:31.636835 S1 RequestVote adopt term 6 -> 7 (was Candidate) cand=0
+21:00:31.636868 S1 RequestVote GRANT cand=0 term=7 (my lastIdx=0 lastTerm=0)
+21:00:31.637088 S0 got vote from S1 votes=2/3 term=7
+21:00:31.637106 S0 WON ELECTION -> Leader term=7
+21:00:31.637120 S0 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 2 peers
+21:00:31.637538 S1 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:31.637757 S0 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:31.652219 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.712686 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.713436 S0 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:31.745625 S0 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 2 peers
+21:00:31.745695 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.747504 S1 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:31.747985 S0 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:31.761745 S2 broadcastHeartbeats term=2 prev=(0,0) commit=0 -> 2 peers
+21:00:31.771128 S2 appendEntries -> S1 RPC fail (no reply) term=2
+21:00:31.777481 S2 appendEntries -> S0 RPC fail (no reply) term=2
+21:00:31.831958 S0 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:31.857527 S0 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 2 peers
+21:00:31.858294 S2 AppendEntries adopt higher term 2 -> 7 (was Leader) leader=0
+21:00:31.858302 S1 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:31.858340 S2 step down to Follower (AppendEntries) term=7 leader=0
+21:00:31.858383 S2 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:31.858638 S0 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:31.858675 S0 appendEntries -> S2 ok term=7 success=true replyTerm=7
+21:00:31.968993 S0 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 2 peers
+21:00:31.970153 S2 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:31.970160 S1 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:31.970465 S0 appendEntries -> S2 ok term=7 success=true replyTerm=7
+21:00:31.970511 S0 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:32.080505 S0 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 2 peers
+21:00:32.081252 S1 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.081281 S2 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.081792 S0 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:32.081846 S0 appendEntries -> S2 ok term=7 success=true replyTerm=7
+21:00:32.190924 S0 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 2 peers
+21:00:32.191655 S1 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.191676 S2 AppendEntries OK leader=0 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.192021 S0 appendEntries -> S2 ok term=7 success=true replyTerm=7
+21:00:32.192091 S0 appendEntries -> S1 ok term=7 success=true replyTerm=7
+  ... Passed --   4.9  3  112   22132    0
+21:00:32.259231 S0 Kill()
+21:00:32.259276 S1 Kill()
+21:00:32.259292 S2 Kill()
+--- PASS: TestReElection3A (4.91s)
+=== RUN   TestManyElections3A
+21:00:32.259802 S0 Make: Follower peers=7
+21:00:32.260123 S1 Make: Follower peers=7
+21:00:32.260334 S2 Make: Follower peers=7
+21:00:32.260497 S3 Make: Follower peers=7
+21:00:32.260739 S4 Make: Follower peers=7
+21:00:32.260962 S5 Make: Follower peers=7
+21:00:32.261103 S6 Make: Follower peers=7
+Test (3A): multiple elections ...
+21:00:32.674473 S3 startElection -> Candidate term=1 lastLog=(0,0) votes=1
+21:00:32.675227 S0 RequestVote adopt term 0 -> 1 (was Follower) cand=3
+21:00:32.675234 S5 RequestVote adopt term 0 -> 1 (was Follower) cand=3
+21:00:32.675260 S6 RequestVote adopt term 0 -> 1 (was Follower) cand=3
+21:00:32.675234 S2 RequestVote adopt term 0 -> 1 (was Follower) cand=3
+21:00:32.675302 S2 RequestVote GRANT cand=3 term=1 (my lastIdx=0 lastTerm=0)
+21:00:32.675273 S5 RequestVote GRANT cand=3 term=1 (my lastIdx=0 lastTerm=0)
+21:00:32.675260 S0 RequestVote GRANT cand=3 term=1 (my lastIdx=0 lastTerm=0)
+21:00:32.675500 S1 RequestVote adopt term 0 -> 1 (was Follower) cand=3
+21:00:32.675535 S1 RequestVote GRANT cand=3 term=1 (my lastIdx=0 lastTerm=0)
+21:00:32.675556 S4 RequestVote adopt term 0 -> 1 (was Follower) cand=3
+21:00:32.675678 S4 RequestVote GRANT cand=3 term=1 (my lastIdx=0 lastTerm=0)
+21:00:32.675854 S3 got vote from S5 votes=2/7 term=1
+21:00:32.675297 S6 RequestVote GRANT cand=3 term=1 (my lastIdx=0 lastTerm=0)
+21:00:32.675881 S3 got vote from S0 votes=3/7 term=1
+21:00:32.676004 S3 got vote from S4 votes=4/7 term=1
+21:00:32.676029 S3 WON ELECTION -> Leader term=1
+21:00:32.676058 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:32.676616 S1 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.676632 S4 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.676699 S6 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.676731 S0 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.676991 S3 appendEntries -> S1 ok term=1 success=true replyTerm=1
+21:00:32.677035 S3 appendEntries -> S6 ok term=1 success=true replyTerm=1
+21:00:32.677078 S2 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.677082 S3 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:32.677184 S3 appendEntries -> S4 ok term=1 success=true replyTerm=1
+21:00:32.677394 S3 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:32.677398 S5 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.677633 S3 appendEntries -> S5 ok term=1 success=true replyTerm=1
+21:00:32.785284 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:32.785966 S6 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.785998 S0 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.785977 S4 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.786182 S1 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.786211 S3 appendEntries -> S0 ok term=1 success=true replyTerm=1
+21:00:32.786263 S3 appendEntries -> S6 ok term=1 success=true replyTerm=1
+21:00:32.786423 S3 appendEntries -> S1 ok term=1 success=true replyTerm=1
+21:00:32.786453 S3 appendEntries -> S4 ok term=1 success=true replyTerm=1
+21:00:32.786461 S2 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.786658 S3 appendEntries -> S2 ok term=1 success=true replyTerm=1
+21:00:32.786837 S5 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.787051 S3 appendEntries -> S5 ok term=1 success=true replyTerm=1
+21:00:32.897905 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:32.898788 S5 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.898788 S1 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.898803 S6 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:32.899028 S3 appendEntries -> S5 ok term=1 success=true replyTerm=1
+21:00:32.899068 S3 appendEntries -> S6 ok term=1 success=true replyTerm=1
+21:00:32.899234 S3 appendEntries -> S1 ok term=1 success=true replyTerm=1
+21:00:32.918011 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:32.919544 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:32.931955 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.008257 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.009069 S5 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.009134 S1 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.009075 S6 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.009409 S3 appendEntries -> S1 ok term=1 success=true replyTerm=1
+21:00:33.009455 S3 appendEntries -> S6 ok term=1 success=true replyTerm=1
+21:00:33.009532 S3 appendEntries -> S5 ok term=1 success=true replyTerm=1
+21:00:33.039262 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.067858 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.102995 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.118993 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.119970 S6 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.119970 S1 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.119996 S5 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.120991 S3 appendEntries -> S1 ok term=1 success=true replyTerm=1
+21:00:33.121383 S3 appendEntries -> S6 ok term=1 success=true replyTerm=1
+21:00:33.121460 S3 appendEntries -> S5 ok term=1 success=true replyTerm=1
+21:00:33.140193 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.154841 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.156838 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.231002 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.231706 S1 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.231706 S5 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.231749 S6 AppendEntries OK leader=3 term=1 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.231974 S3 appendEntries -> S5 ok term=1 success=true replyTerm=1
+21:00:33.231996 S3 appendEntries -> S6 ok term=1 success=true replyTerm=1
+21:00:33.232024 S3 appendEntries -> S1 ok term=1 success=true replyTerm=1
+21:00:33.251974 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.297826 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.300293 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.309851 S4 startElection -> Candidate term=2 lastLog=(0,0) votes=1
+21:00:33.310337 S4 RequestVote RPC failed to S1 term=2 (network/timeout)
+21:00:33.325931 S2 startElection -> Candidate term=2 lastLog=(0,0) votes=1
+21:00:33.329762 S2 RequestVote RPC failed to S1 term=2 (network/timeout)
+21:00:33.330629 S2 RequestVote RPC failed to S6 term=2 (network/timeout)
+21:00:33.341904 S0 startElection -> Candidate term=2 lastLog=(0,0) votes=1
+21:00:33.341887 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.342480 S1 RequestVote adopt term 1 -> 2 (was Follower) cand=0
+21:00:33.342526 S1 RequestVote GRANT cand=0 term=2 (my lastIdx=0 lastTerm=0)
+21:00:33.342671 S2 RequestVote RPC failed to S0 term=2 (network/timeout)
+21:00:33.342780 S0 got vote from S1 votes=2/7 term=2
+21:00:33.342925 S2 RequestVote DENY cand=0 term=2: voted for other
+21:00:33.343050 S5 RequestVote adopt term 1 -> 2 (was Follower) cand=0
+21:00:33.343082 S5 RequestVote GRANT cand=0 term=2 (my lastIdx=0 lastTerm=0)
+21:00:33.343177 S0 RequestVote no grant from S2 term=2 (replyTerm=2)
+21:00:33.343390 S0 got vote from S5 votes=3/7 term=2
+21:00:33.343891 S4 RequestVote DENY cand=0 term=2: voted for other
+21:00:33.344139 S0 RequestVote no grant from S4 term=2 (replyTerm=2)
+21:00:33.344482 S0 RequestVote RPC failed to S3 term=2 (network/timeout)
+21:00:33.345517 S4 RequestVote RPC failed to S6 term=2 (network/timeout)
+21:00:33.353641 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.368357 S2 RequestVote RPC failed to S3 term=2 (network/timeout)
+21:00:33.369862 S4 RequestVote RPC failed to S5 term=2 (network/timeout)
+21:00:33.371592 S4 RequestVote RPC failed to S0 term=2 (network/timeout)
+21:00:33.374642 S2 RequestVote RPC failed to S4 term=2 (network/timeout)
+21:00:33.386703 S4 RequestVote RPC failed to S3 term=2 (network/timeout)
+21:00:33.394171 S4 RequestVote RPC failed to S2 term=2 (network/timeout)
+21:00:33.400968 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:33.405800 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.411168 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:33.417009 S2 RequestVote RPC failed to S5 term=2 (network/timeout)
+21:00:33.422201 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.431229 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:33.439129 S0 RequestVote RPC failed to S6 term=2 (network/timeout)
+21:00:33.448454 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.474077 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.479847 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:33.480810 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:33.480821 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:33.505076 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.522300 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.559186 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.565758 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:33.591265 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:33.597940 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.606571 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.626699 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.634573 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:33.668303 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.689114 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:33.731504 S6 startElection -> Candidate term=2 lastLog=(0,0) votes=1
+21:00:33.731855 S6 RequestVote RPC failed to S4 term=2 (network/timeout)
+21:00:33.747577 S4 startElection -> Candidate term=3 lastLog=(0,0) votes=1
+21:00:33.748089 S0 RequestVote adopt term 2 -> 3 (was Candidate) cand=4
+21:00:33.748089 S2 RequestVote adopt term 2 -> 3 (was Candidate) cand=4
+21:00:33.748134 S1 RequestVote adopt term 2 -> 3 (was Follower) cand=4
+21:00:33.748153 S2 RequestVote GRANT cand=4 term=3 (my lastIdx=0 lastTerm=0)
+21:00:33.748182 S1 RequestVote GRANT cand=4 term=3 (my lastIdx=0 lastTerm=0)
+21:00:33.748117 S0 RequestVote GRANT cand=4 term=3 (my lastIdx=0 lastTerm=0)
+21:00:33.748292 S5 RequestVote adopt term 2 -> 3 (was Follower) cand=4
+21:00:33.748342 S5 RequestVote GRANT cand=4 term=3 (my lastIdx=0 lastTerm=0)
+21:00:33.748438 S4 got vote from S1 votes=2/7 term=3
+21:00:33.748538 S4 got vote from S2 votes=3/7 term=3
+21:00:33.748564 S4 got vote from S5 votes=4/7 term=3
+21:00:33.748577 S4 WON ELECTION -> Leader term=3
+21:00:33.748594 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:33.748859 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:33.749040 S2 AppendEntries OK leader=4 term=3 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.749075 S0 AppendEntries OK leader=4 term=3 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.749087 S1 AppendEntries OK leader=4 term=3 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.749236 S4 appendEntries -> S2 ok term=3 success=true replyTerm=3
+21:00:33.749262 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.749268 S4 appendEntries -> S1 ok term=3 success=true replyTerm=3
+21:00:33.749269 S5 AppendEntries OK leader=4 term=3 prev=(0,0) appended=0 lastLogIdx=0
+21:00:33.749395 S4 appendEntries -> S0 ok term=3 success=true replyTerm=3
+21:00:33.749447 S4 appendEntries -> S5 ok term=3 success=true replyTerm=3
+21:00:33.749942 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.749962 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.750890 S6 RequestVote RPC failed to S2 term=2 (network/timeout)
+21:00:33.752980 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:33.757357 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:33.779237 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.784542 S6 RequestVote RPC failed to S0 term=2 (network/timeout)
+21:00:33.787817 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.789061 S6 RequestVote RPC failed to S1 term=2 (network/timeout)
+21:00:33.807494 S6 RequestVote RPC failed to S3 term=2 (network/timeout)
+21:00:33.814965 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.817148 S6 RequestVote RPC failed to S5 term=2 (network/timeout)
+21:00:33.842988 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:33.849590 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:33.857534 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:33.870513 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:33.879129 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:33.879156 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.888830 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:33.892193 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:33.919117 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:33.922499 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:33.923979 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:33.932068 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:33.932081 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:33.942542 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:33.947834 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:33.947943 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:33.955659 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:33.956870 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:33.966681 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:33.966703 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:33.994182 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:33.997423 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:33.997736 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:34.001503 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.003265 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.006400 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:34.013591 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:34.032306 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:34.035444 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.041442 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.042077 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:34.055069 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:34.068540 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:34.076586 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.107643 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:34.107673 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.109188 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:34.110138 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.111085 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.143254 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.155136 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:34.157011 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.157021 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:34.157038 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:34.159345 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:34.169984 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:34.170039 S6 startElection -> Candidate term=3 lastLog=(0,0) votes=1
+21:00:34.170537 S0 RequestVote DENY cand=6 term=3: voted for other
+21:00:34.170599 S2 RequestVote DENY cand=6 term=3: voted for other
+21:00:34.170652 S5 RequestVote DENY cand=6 term=3: voted for other
+21:00:34.170822 S6 RequestVote no grant from S0 term=3 (replyTerm=3)
+21:00:34.170883 S6 RequestVote no grant from S2 term=3 (replyTerm=3)
+21:00:34.170942 S6 RequestVote no grant from S5 term=3 (replyTerm=3)
+21:00:34.174602 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.186053 S0 startElection -> Candidate term=4 lastLog=(0,0) votes=1
+21:00:34.186070 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.186614 S2 RequestVote adopt term 3 -> 4 (was Follower) cand=0
+21:00:34.186644 S2 RequestVote GRANT cand=0 term=4 (my lastIdx=0 lastTerm=0)
+21:00:34.186795 S5 RequestVote adopt term 3 -> 4 (was Follower) cand=0
+21:00:34.186808 S6 RequestVote adopt term 3 -> 4 (was Candidate) cand=0
+21:00:34.186825 S5 RequestVote GRANT cand=0 term=4 (my lastIdx=0 lastTerm=0)
+21:00:34.186837 S6 RequestVote GRANT cand=0 term=4 (my lastIdx=0 lastTerm=0)
+21:00:34.186916 S0 got vote from S2 votes=2/7 term=4
+21:00:34.187108 S0 got vote from S5 votes=3/7 term=4
+21:00:34.187154 S0 got vote from S6 votes=4/7 term=4
+21:00:34.187177 S0 WON ELECTION -> Leader term=4
+21:00:34.187199 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.187786 S5 AppendEntries OK leader=0 term=4 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.187831 S2 AppendEntries OK leader=0 term=4 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.187838 S6 AppendEntries OK leader=0 term=4 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.188064 S0 appendEntries -> S5 ok term=4 success=true replyTerm=4
+21:00:34.188120 S0 appendEntries -> S6 ok term=4 success=true replyTerm=4
+21:00:34.188151 S0 appendEntries -> S2 ok term=4 success=true replyTerm=4
+21:00:34.209592 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.209567 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.213095 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.215696 S0 appendEntries -> S1 RPC fail (no reply) term=4
+21:00:34.217224 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:34.219792 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.220686 S3 appendEntries -> S2 RPC fail (no reply) term=1
+21:00:34.221489 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.233262 S1 startElection -> Candidate term=4 lastLog=(0,0) votes=1
+21:00:34.235875 S1 RequestVote RPC failed to S3 term=4 (network/timeout)
+21:00:34.251877 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.264692 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:34.265905 S3 appendEntries -> S1 RPC fail (no reply) term=1
+21:00:34.266467 S0 appendEntries -> S4 RPC fail (no reply) term=4
+21:00:34.271850 S3 appendEntries -> S5 RPC fail (no reply) term=1
+21:00:34.273711 S0 appendEntries -> S3 RPC fail (no reply) term=4
+21:00:34.280587 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:34.295494 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.295533 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.296498 S6 AppendEntries OK leader=0 term=4 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.296489 S2 AppendEntries OK leader=0 term=4 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.296462 S5 AppendEntries OK leader=0 term=4 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.297031 S0 appendEntries -> S2 ok term=4 success=true replyTerm=4
+21:00:34.297146 S0 appendEntries -> S6 ok term=4 success=true replyTerm=4
+21:00:34.297213 S0 appendEntries -> S5 ok term=4 success=true replyTerm=4
+21:00:34.299017 S1 RequestVote RPC failed to S5 term=4 (network/timeout)
+21:00:34.309182 S1 RequestVote RPC failed to S6 term=4 (network/timeout)
+21:00:34.309199 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.309211 S1 RequestVote RPC failed to S4 term=4 (network/timeout)
+21:00:34.310261 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.312849 S1 RequestVote RPC failed to S0 term=4 (network/timeout)
+21:00:34.314927 S3 appendEntries -> S6 RPC fail (no reply) term=1
+21:00:34.323866 S0 appendEntries -> S3 RPC fail (no reply) term=4
+21:00:34.325778 S3 broadcastHeartbeats term=1 prev=(0,0) commit=0 -> 6 peers
+21:00:34.326330 S1 AppendEntries REJECT stale leader: args.Term=1 < currentTerm=4 leader=3 prev=(0,0) entries=0
+21:00:34.326335 S2 AppendEntries REJECT stale leader: args.Term=1 < currentTerm=4 leader=3 prev=(0,0) entries=0
+21:00:34.326407 S6 AppendEntries REJECT stale leader: args.Term=1 < currentTerm=4 leader=3 prev=(0,0) entries=0
+21:00:34.326414 S5 AppendEntries REJECT stale leader: args.Term=1 < currentTerm=4 leader=3 prev=(0,0) entries=0
+21:00:34.326633 S3 appendEntries reply from S2: stale leader replyTerm=4 > myTerm=1 -> Follower
+21:00:34.326690 S3 appendEntries -> S5 ok term=1 success=false replyTerm=4
+21:00:34.326717 S3 appendEntries -> S1 ok term=1 success=false replyTerm=4
+21:00:34.326763 S3 appendEntries -> S6 ok term=1 success=false replyTerm=4
+21:00:34.328340 S0 appendEntries -> S1 RPC fail (no reply) term=4
+21:00:34.328682 S1 RequestVote RPC failed to S2 term=4 (network/timeout)
+21:00:34.335055 S3 appendEntries -> S4 RPC fail (no reply) term=1
+21:00:34.335071 S0 appendEntries -> S4 RPC fail (no reply) term=4
+21:00:34.341639 S3 startElection -> Candidate term=5 lastLog=(0,0) votes=1
+21:00:34.342102 S2 RequestVote adopt term 4 -> 5 (was Follower) cand=3
+21:00:34.342131 S2 RequestVote GRANT cand=3 term=5 (my lastIdx=0 lastTerm=0)
+21:00:34.342147 S6 RequestVote adopt term 4 -> 5 (was Follower) cand=3
+21:00:34.342155 S5 RequestVote adopt term 4 -> 5 (was Follower) cand=3
+21:00:34.342174 S6 RequestVote GRANT cand=3 term=5 (my lastIdx=0 lastTerm=0)
+21:00:34.342187 S5 RequestVote GRANT cand=3 term=5 (my lastIdx=0 lastTerm=0)
+21:00:34.342155 S1 RequestVote adopt term 4 -> 5 (was Candidate) cand=3
+21:00:34.342270 S1 RequestVote GRANT cand=3 term=5 (my lastIdx=0 lastTerm=0)
+21:00:34.342409 S3 got vote from S2 votes=2/7 term=5
+21:00:34.342457 S3 got vote from S6 votes=3/7 term=5
+21:00:34.342485 S3 got vote from S5 votes=4/7 term=5
+21:00:34.342503 S3 WON ELECTION -> Leader term=5
+21:00:34.342523 S3 broadcastHeartbeats term=5 prev=(0,0) commit=0 -> 6 peers
+21:00:34.343087 S6 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.343099 S2 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.343130 S1 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.343160 S5 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.343384 S3 appendEntries -> S2 ok term=5 success=true replyTerm=5
+21:00:34.343413 S3 appendEntries -> S1 ok term=5 success=true replyTerm=5
+21:00:34.343437 S3 appendEntries -> S6 ok term=5 success=true replyTerm=5
+21:00:34.343469 S3 appendEntries -> S5 ok term=5 success=true replyTerm=5
+21:00:34.345473 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.346104 S3 appendEntries -> S0 RPC fail (no reply) term=1
+21:00:34.354987 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.367440 S3 appendEntries -> S4 RPC fail (no reply) term=5
+21:00:34.371493 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.387835 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.387814 S3 appendEntries -> S0 RPC fail (no reply) term=5
+21:00:34.403606 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.403614 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.405324 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.417535 S0 appendEntries -> S5 RPC fail (no reply) term=4
+21:00:34.433221 S0 appendEntries -> S2 RPC fail (no reply) term=4
+21:00:34.438584 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.439064 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.441783 S0 appendEntries -> S4 RPC fail (no reply) term=4
+21:00:34.449105 S3 broadcastHeartbeats term=5 prev=(0,0) commit=0 -> 6 peers
+21:00:34.449866 S1 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.449882 S6 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.449926 S5 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.450101 S2 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.450187 S3 appendEntries -> S6 ok term=5 success=true replyTerm=5
+21:00:34.450216 S3 appendEntries -> S5 ok term=5 success=true replyTerm=5
+21:00:34.450242 S3 appendEntries -> S1 ok term=5 success=true replyTerm=5
+21:00:34.450376 S3 appendEntries -> S2 ok term=5 success=true replyTerm=5
+21:00:34.455817 S3 appendEntries -> S0 RPC fail (no reply) term=5
+21:00:34.477543 S0 appendEntries -> S6 RPC fail (no reply) term=4
+21:00:34.480006 S3 appendEntries -> S4 RPC fail (no reply) term=5
+21:00:34.487333 S0 appendEntries -> S3 RPC fail (no reply) term=4
+21:00:34.489403 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.495774 S0 appendEntries -> S1 RPC fail (no reply) term=4
+21:00:34.495815 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.498635 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.509969 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.510311 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.513240 S0 appendEntries -> S4 RPC fail (no reply) term=4
+21:00:34.523961 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.530437 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.545244 S0 appendEntries -> S5 RPC fail (no reply) term=4
+21:00:34.555524 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.556358 S3 broadcastHeartbeats term=5 prev=(0,0) commit=0 -> 6 peers
+21:00:34.556651 S1 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.556656 S6 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.556680 S2 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.556689 S5 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.556765 S3 appendEntries -> S1 ok term=5 success=true replyTerm=5
+21:00:34.556784 S3 appendEntries -> S6 ok term=5 success=true replyTerm=5
+21:00:34.556804 S3 appendEntries -> S5 ok term=5 success=true replyTerm=5
+21:00:34.556826 S3 appendEntries -> S2 ok term=5 success=true replyTerm=5
+21:00:34.557929 S0 appendEntries -> S6 RPC fail (no reply) term=4
+21:00:34.570416 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.573812 S3 appendEntries -> S4 RPC fail (no reply) term=5
+21:00:34.580578 S0 appendEntries -> S2 RPC fail (no reply) term=4
+21:00:34.589079 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.596662 S0 appendEntries -> S1 RPC fail (no reply) term=4
+21:00:34.605101 S0 appendEntries -> S3 RPC fail (no reply) term=4
+21:00:34.607051 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.618672 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.618700 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.619613 S3 appendEntries -> S0 RPC fail (no reply) term=5
+21:00:34.629025 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.635101 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.635105 S0 appendEntries -> S3 RPC fail (no reply) term=4
+21:00:34.653398 S0 appendEntries -> S6 RPC fail (no reply) term=4
+21:00:34.666018 S3 broadcastHeartbeats term=5 prev=(0,0) commit=0 -> 6 peers
+21:00:34.666431 S2 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.666433 S1 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.666466 S5 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.666535 S6 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.666618 S3 appendEntries -> S2 ok term=5 success=true replyTerm=5
+21:00:34.666638 S3 appendEntries -> S1 ok term=5 success=true replyTerm=5
+21:00:34.666653 S3 appendEntries -> S5 ok term=5 success=true replyTerm=5
+21:00:34.666722 S3 appendEntries -> S6 ok term=5 success=true replyTerm=5
+21:00:34.681979 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.687532 S3 appendEntries -> S0 RPC fail (no reply) term=5
+21:00:34.689179 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.689973 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.690249 S3 appendEntries -> S4 RPC fail (no reply) term=5
+21:00:34.700231 S0 appendEntries -> S2 RPC fail (no reply) term=4
+21:00:34.703296 S0 appendEntries -> S1 RPC fail (no reply) term=4
+21:00:34.704045 S0 appendEntries -> S4 RPC fail (no reply) term=4
+21:00:34.710795 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.716324 S0 appendEntries -> S5 RPC fail (no reply) term=4
+21:00:34.729145 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.729145 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.734025 S0 appendEntries -> S1 RPC fail (no reply) term=4
+21:00:34.737075 S4 appendEntries -> S0 RPC fail (no reply) term=3
+21:00:34.748069 S0 appendEntries -> S4 RPC fail (no reply) term=4
+21:00:34.755429 S0 appendEntries -> S2 RPC fail (no reply) term=4
+21:00:34.760880 S0 appendEntries -> S5 RPC fail (no reply) term=4
+21:00:34.761910 S4 appendEntries -> S1 RPC fail (no reply) term=3
+21:00:34.762891 S4 appendEntries -> S3 RPC fail (no reply) term=3
+21:00:34.772464 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.774960 S3 broadcastHeartbeats term=5 prev=(0,0) commit=0 -> 6 peers
+21:00:34.775577 S6 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.775589 S1 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.775651 S2 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.775667 S5 AppendEntries OK leader=3 term=5 prev=(0,0) appended=0 lastLogIdx=0
+21:00:34.775864 S3 appendEntries -> S6 ok term=5 success=true replyTerm=5
+21:00:34.775895 S3 appendEntries -> S1 ok term=5 success=true replyTerm=5
+21:00:34.775943 S3 appendEntries -> S5 ok term=5 success=true replyTerm=5
+21:00:34.775995 S3 appendEntries -> S2 ok term=5 success=true replyTerm=5
+21:00:34.776821 S0 appendEntries -> S6 RPC fail (no reply) term=4
+21:00:34.776827 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.781390 S3 appendEntries -> S0 RPC fail (no reply) term=5
+21:00:34.801644 S0 appendEntries -> S3 RPC fail (no reply) term=4
+21:00:34.809193 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.811693 S3 appendEntries -> S4 RPC fail (no reply) term=5
+21:00:34.838047 S4 broadcastHeartbeats term=3 prev=(0,0) commit=0 -> 6 peers
+21:00:34.838508 S0 broadcastHeartbeats term=4 prev=(0,0) commit=0 -> 6 peers
+21:00:34.839327 S3 AppendEntries REJECT stale leader: args.Term=3 < currentTerm=5 leader=4 prev=(0,0) entries=0
+21:00:34.839358 S0 AppendEntries REJECT stale leader: args.Term=3 < currentTerm=4 leader=4 prev=(0,0) entries=0
+21:00:34.839636 S4 appendEntries reply from S3: stale leader replyTerm=5 > myTerm=3 -> Follower
+21:00:34.839692 S4 appendEntries -> S0 ok term=3 success=false replyTerm=4
+21:00:34.839710 S1 AppendEntries REJECT stale leader: args.Term=3 < currentTerm=5 leader=4 prev=(0,0) entries=0
+21:00:34.839714 S3 AppendEntries REJECT stale leader: args.Term=4 < currentTerm=5 leader=0 prev=(0,0) entries=0
+21:00:34.839902 S1 AppendEntries REJECT stale leader: args.Term=4 < currentTerm=5 leader=0 prev=(0,0) entries=0
+21:00:34.840028 S4 AppendEntries REJECT stale leader: args.Term=4 < currentTerm=5 leader=0 prev=(0,0) entries=0
+21:00:34.840040 S0 appendEntries reply from S3: stale leader replyTerm=5 > myTerm=4 -> Follower
+21:00:34.840114 S0 appendEntries -> S1 ok term=4 success=false replyTerm=5
+21:00:34.840144 S4 appendEntries -> S1 ok term=3 success=false replyTerm=5
+21:00:34.840335 S0 appendEntries -> S4 ok term=4 success=false replyTerm=5
+21:00:34.842249 S4 appendEntries -> S6 RPC fail (no reply) term=3
+21:00:34.854101 S0 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:34.854128 S4 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:34.854818 S0 RequestVote DENY cand=4 term=6: voted for other
+21:00:34.854830 S1 RequestVote adopt term 5 -> 6 (was Follower) cand=0
+21:00:34.854821 S3 RequestVote adopt term 5 -> 6 (was Leader) cand=4
+21:00:34.854858 S1 RequestVote GRANT cand=0 term=6 (my lastIdx=0 lastTerm=0)
+21:00:34.854867 S3 RequestVote GRANT cand=4 term=6 (my lastIdx=0 lastTerm=0)
+21:00:34.854934 S3 RequestVote DENY cand=0 term=6: voted for other
+21:00:34.855061 S4 RequestVote DENY cand=0 term=6: voted for other
+21:00:34.855088 S0 got vote from S1 votes=2/7 term=6
+21:00:34.855127 S4 RequestVote no grant from S0 term=6 (replyTerm=6)
+21:00:34.855238 S4 got vote from S3 votes=2/7 term=6
+21:00:34.855293 S1 RequestVote DENY cand=4 term=6: voted for other
+21:00:34.855299 S0 RequestVote no grant from S3 term=6 (replyTerm=6)
+21:00:34.855332 S0 RequestVote no grant from S4 term=6 (replyTerm=6)
+21:00:34.855506 S4 RequestVote no grant from S1 term=6 (replyTerm=6)
+21:00:34.855971 S4 appendEntries -> S5 RPC fail (no reply) term=3
+21:00:34.862168 S0 appendEntries -> S2 RPC fail (no reply) term=4
+21:00:34.898012 S0 appendEntries -> S6 RPC fail (no reply) term=4
+21:00:34.900937 S4 RequestVote RPC failed to S6 term=6 (network/timeout)
+21:00:34.902674 S0 appendEntries -> S5 RPC fail (no reply) term=4
+21:00:34.907436 S4 RequestVote RPC failed to S2 term=6 (network/timeout)
+21:00:34.921156 S0 RequestVote RPC failed to S2 term=6 (network/timeout)
+21:00:34.933026 S4 appendEntries -> S2 RPC fail (no reply) term=3
+21:00:34.933987 S0 RequestVote RPC failed to S6 term=6 (network/timeout)
+21:00:34.943288 S0 RequestVote RPC failed to S5 term=6 (network/timeout)
+21:00:34.948225 S4 RequestVote RPC failed to S5 term=6 (network/timeout)
+21:00:35.250357 S5 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:35.250883 S6 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:35.251446 S6 RequestVote RPC failed to S2 term=6 (network/timeout)
+21:00:35.260389 S6 RequestVote RPC failed to S0 term=6 (network/timeout)
+21:00:35.292285 S5 RequestVote RPC failed to S2 term=6 (network/timeout)
+21:00:35.296720 S2 startElection -> Candidate term=6 lastLog=(0,0) votes=1
+21:00:35.301931 S5 RequestVote RPC failed to S4 term=6 (network/timeout)
+21:00:35.307359 S6 RequestVote RPC failed to S4 term=6 (network/timeout)
+21:00:35.312257 S5 RequestVote RPC failed to S6 term=6 (network/timeout)
+21:00:35.312293 S3 startElection -> Candidate term=7 lastLog=(0,0) votes=1
+21:00:35.312865 S1 RequestVote adopt term 6 -> 7 (was Follower) cand=3
+21:00:35.312903 S1 RequestVote GRANT cand=3 term=7 (my lastIdx=0 lastTerm=0)
+21:00:35.312868 S4 RequestVote adopt term 6 -> 7 (was Candidate) cand=3
+21:00:35.312957 S4 RequestVote GRANT cand=3 term=7 (my lastIdx=0 lastTerm=0)
+21:00:35.312851 S0 RequestVote adopt term 6 -> 7 (was Candidate) cand=3
+21:00:35.313024 S0 RequestVote GRANT cand=3 term=7 (my lastIdx=0 lastTerm=0)
+21:00:35.313211 S3 got vote from S1 votes=2/7 term=7
+21:00:35.313298 S3 got vote from S4 votes=3/7 term=7
+21:00:35.313401 S3 got vote from S0 votes=4/7 term=7
+21:00:35.313450 S3 WON ELECTION -> Leader term=7
+21:00:35.313469 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.314137 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.314153 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.314220 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.314440 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.314474 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.314499 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.319224 S2 RequestVote RPC failed to S3 term=6 (network/timeout)
+21:00:35.319494 S2 RequestVote RPC failed to S4 term=6 (network/timeout)
+21:00:35.327634 S5 RequestVote RPC failed to S1 term=6 (network/timeout)
+21:00:35.327709 S2 RequestVote RPC failed to S6 term=6 (network/timeout)
+21:00:35.331250 S5 RequestVote RPC failed to S0 term=6 (network/timeout)
+21:00:35.340701 S2 RequestVote RPC failed to S0 term=6 (network/timeout)
+21:00:35.341000 S5 RequestVote RPC failed to S3 term=6 (network/timeout)
+21:00:35.341716 S2 RequestVote RPC failed to S5 term=6 (network/timeout)
+21:00:35.343909 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:35.344547 S6 RequestVote RPC failed to S5 term=6 (network/timeout)
+21:00:35.345170 S6 RequestVote RPC failed to S1 term=6 (network/timeout)
+21:00:35.349876 S6 RequestVote RPC failed to S3 term=6 (network/timeout)
+21:00:35.351640 S2 RequestVote RPC failed to S1 term=6 (network/timeout)
+21:00:35.386935 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:35.389064 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:35.420212 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.421032 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.421045 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.421119 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.421277 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.421296 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.421358 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.437941 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:35.488163 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:35.498143 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:35.531181 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.531831 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.531837 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.532043 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.532123 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.532154 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.532315 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.549919 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:35.621692 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:35.622852 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:35.642123 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.642786 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.642785 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.643001 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.643093 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.643120 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.643226 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.677096 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:35.710153 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:35.736840 S2 startElection -> Candidate term=7 lastLog=(0,0) votes=1
+21:00:35.738376 S2 RequestVote RPC failed to S5 term=7 (network/timeout)
+21:00:35.738505 S2 RequestVote RPC failed to S0 term=7 (network/timeout)
+21:00:35.741947 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:35.748257 S2 RequestVote RPC failed to S6 term=7 (network/timeout)
+21:00:35.752015 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.752585 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.752665 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.752756 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.752872 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.752958 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.753030 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.755753 S2 RequestVote RPC failed to S4 term=7 (network/timeout)
+21:00:35.762029 S2 RequestVote RPC failed to S3 term=7 (network/timeout)
+21:00:35.766926 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:35.796260 S2 RequestVote RPC failed to S1 term=7 (network/timeout)
+21:00:35.808423 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:35.827455 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:35.845305 S5 startElection -> Candidate term=7 lastLog=(0,0) votes=1
+21:00:35.845303 S6 startElection -> Candidate term=7 lastLog=(0,0) votes=1
+21:00:35.847246 S5 RequestVote RPC failed to S2 term=7 (network/timeout)
+21:00:35.858547 S5 RequestVote RPC failed to S3 term=7 (network/timeout)
+21:00:35.860537 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.861238 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.861281 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.861344 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.861518 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.861641 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.861671 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.874839 S6 RequestVote RPC failed to S2 term=7 (network/timeout)
+21:00:35.886891 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:35.889053 S5 RequestVote RPC failed to S4 term=7 (network/timeout)
+21:00:35.896258 S5 RequestVote RPC failed to S0 term=7 (network/timeout)
+21:00:35.898264 S6 RequestVote RPC failed to S5 term=7 (network/timeout)
+21:00:35.914169 S5 RequestVote RPC failed to S6 term=7 (network/timeout)
+21:00:35.917152 S6 RequestVote RPC failed to S4 term=7 (network/timeout)
+21:00:35.918060 S5 RequestVote RPC failed to S1 term=7 (network/timeout)
+21:00:35.922289 S6 RequestVote RPC failed to S1 term=7 (network/timeout)
+21:00:35.927395 S6 RequestVote RPC failed to S0 term=7 (network/timeout)
+21:00:35.942338 S6 RequestVote RPC failed to S3 term=7 (network/timeout)
+21:00:35.942940 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:35.957425 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:35.970407 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:35.971395 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.971520 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.971762 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:35.971785 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:35.971785 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:35.971993 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:35.975225 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:36.017855 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:36.025842 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:36.083465 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:36.084140 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.084181 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.084274 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.084413 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:36.084437 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:36.084490 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:36.106822 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:36.153490 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:36.173569 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:36.195361 S3 broadcastHeartbeats term=7 prev=(0,0) commit=0 -> 6 peers
+21:00:36.196541 S1 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.196535 S4 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.196553 S0 AppendEntries OK leader=3 term=7 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.197261 S3 appendEntries -> S4 ok term=7 success=true replyTerm=7
+21:00:36.197312 S3 appendEntries -> S1 ok term=7 success=true replyTerm=7
+21:00:36.197447 S3 appendEntries -> S0 ok term=7 success=true replyTerm=7
+21:00:36.209294 S3 appendEntries -> S2 RPC fail (no reply) term=7
+21:00:36.240444 S3 appendEntries -> S6 RPC fail (no reply) term=7
+21:00:36.257174 S2 startElection -> Candidate term=8 lastLog=(0,0) votes=1
+21:00:36.257818 S3 RequestVote adopt term 7 -> 8 (was Leader) cand=2
+21:00:36.257851 S1 RequestVote adopt term 7 -> 8 (was Follower) cand=2
+21:00:36.257878 S3 RequestVote GRANT cand=2 term=8 (my lastIdx=0 lastTerm=0)
+21:00:36.257879 S1 RequestVote GRANT cand=2 term=8 (my lastIdx=0 lastTerm=0)
+21:00:36.257818 S0 RequestVote adopt term 7 -> 8 (was Follower) cand=2
+21:00:36.257992 S2 RequestVote RPC failed to S5 term=8 (network/timeout)
+21:00:36.258002 S0 RequestVote GRANT cand=2 term=8 (my lastIdx=0 lastTerm=0)
+21:00:36.258127 S2 got vote from S3 votes=2/7 term=8
+21:00:36.258341 S2 got vote from S0 votes=3/7 term=8
+21:00:36.258371 S2 got vote from S1 votes=4/7 term=8
+21:00:36.258397 S2 WON ELECTION -> Leader term=8
+21:00:36.258411 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.258877 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.258878 S1 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.258988 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.259110 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.259139 S2 appendEntries -> S1 ok term=8 success=true replyTerm=8
+21:00:36.259190 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.263241 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.293360 S3 appendEntries -> S5 RPC fail (no reply) term=7
+21:00:36.302399 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.334802 S5 startElection -> Candidate term=8 lastLog=(0,0) votes=1
+21:00:36.338644 S5 RequestVote RPC failed to S1 term=8 (network/timeout)
+21:00:36.345481 S5 RequestVote RPC failed to S4 term=8 (network/timeout)
+21:00:36.358469 S2 appendEntries -> S4 RPC fail (no reply) term=8
+21:00:36.358489 S5 RequestVote RPC failed to S6 term=8 (network/timeout)
+21:00:36.366285 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.366890 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.366958 S1 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.367037 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.367173 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.367251 S2 appendEntries -> S1 ok term=8 success=true replyTerm=8
+21:00:36.367314 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.382852 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.389331 S5 RequestVote RPC failed to S0 term=8 (network/timeout)
+21:00:36.398327 S6 startElection -> Candidate term=8 lastLog=(0,0) votes=1
+21:00:36.413125 S5 RequestVote RPC failed to S2 term=8 (network/timeout)
+21:00:36.413613 S6 RequestVote RPC failed to S4 term=8 (network/timeout)
+21:00:36.418421 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.418421 S5 RequestVote RPC failed to S3 term=8 (network/timeout)
+21:00:36.424302 S6 RequestVote RPC failed to S1 term=8 (network/timeout)
+21:00:36.432015 S6 RequestVote RPC failed to S0 term=8 (network/timeout)
+21:00:36.432695 S6 RequestVote RPC failed to S3 term=8 (network/timeout)
+21:00:36.450130 S2 appendEntries -> S4 RPC fail (no reply) term=8
+21:00:36.463966 S6 RequestVote RPC failed to S5 term=8 (network/timeout)
+21:00:36.476593 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.477320 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.477355 S1 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.477345 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.477648 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.477680 S2 appendEntries -> S1 ok term=8 success=true replyTerm=8
+21:00:36.477701 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.490614 S6 RequestVote RPC failed to S2 term=8 (network/timeout)
+21:00:36.497613 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.535333 S2 appendEntries -> S4 RPC fail (no reply) term=8
+21:00:36.551050 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.586798 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.588328 S1 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.588363 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.588479 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.588596 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.588622 S2 appendEntries -> S1 ok term=8 success=true replyTerm=8
+21:00:36.588710 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.618877 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.618934 S4 startElection -> Candidate term=8 lastLog=(0,0) votes=1
+21:00:36.619377 S4 RequestVote RPC failed to S1 term=8 (network/timeout)
+21:00:36.619397 S2 appendEntries -> S4 RPC fail (no reply) term=8
+21:00:36.644209 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.650284 S4 RequestVote RPC failed to S2 term=8 (network/timeout)
+21:00:36.675475 S4 RequestVote RPC failed to S5 term=8 (network/timeout)
+21:00:36.683097 S4 RequestVote RPC failed to S3 term=8 (network/timeout)
+21:00:36.694152 S4 RequestVote RPC failed to S6 term=8 (network/timeout)
+21:00:36.697431 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.698989 S1 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.699326 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.699378 S2 appendEntries -> S1 ok term=8 success=true replyTerm=8
+21:00:36.699612 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.699919 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.700390 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.716008 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.717422 S4 RequestVote RPC failed to S0 term=8 (network/timeout)
+21:00:36.727406 S2 appendEntries -> S4 RPC fail (no reply) term=8
+21:00:36.760421 S5 startElection -> Candidate term=9 lastLog=(0,0) votes=1
+21:00:36.767687 S5 RequestVote RPC failed to S3 term=9 (network/timeout)
+21:00:36.784917 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.789297 S5 RequestVote RPC failed to S2 term=9 (network/timeout)
+21:00:36.804131 S5 RequestVote RPC failed to S6 term=9 (network/timeout)
+21:00:36.806913 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.807712 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.807712 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.807939 S4 step down to Follower (AppendEntries) term=8 leader=2
+21:00:36.807968 S4 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.807976 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.808022 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.808185 S2 appendEntries -> S4 ok term=8 success=true replyTerm=8
+21:00:36.835293 S5 RequestVote RPC failed to S0 term=9 (network/timeout)
+21:00:36.841224 S5 RequestVote RPC failed to S4 term=9 (network/timeout)
+21:00:36.841280 S5 RequestVote RPC failed to S1 term=9 (network/timeout)
+21:00:36.862382 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.862600 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.875966 S2 appendEntries -> S1 RPC fail (no reply) term=8
+21:00:36.918589 S6 startElection -> Candidate term=9 lastLog=(0,0) votes=1
+21:00:36.918594 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:36.919296 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.919306 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.919303 S4 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:36.919548 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:36.919576 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:36.919597 S2 appendEntries -> S4 ok term=8 success=true replyTerm=8
+21:00:36.923684 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:36.933447 S6 RequestVote RPC failed to S5 term=9 (network/timeout)
+21:00:36.936302 S2 appendEntries -> S1 RPC fail (no reply) term=8
+21:00:36.942943 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:36.954718 S6 RequestVote RPC failed to S1 term=9 (network/timeout)
+21:00:37.002686 S6 RequestVote RPC failed to S4 term=9 (network/timeout)
+21:00:37.004445 S6 RequestVote RPC failed to S0 term=9 (network/timeout)
+21:00:37.007564 S6 RequestVote RPC failed to S2 term=9 (network/timeout)
+21:00:37.016280 S6 RequestVote RPC failed to S3 term=9 (network/timeout)
+21:00:37.028668 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:37.029675 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.029764 S4 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.030415 S2 appendEntries -> S4 ok term=8 success=true replyTerm=8
+21:00:37.030832 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:37.033010 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.033480 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:37.034655 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:37.064426 S2 appendEntries -> S1 RPC fail (no reply) term=8
+21:00:37.090295 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:37.141949 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:37.142683 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.142714 S4 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.142915 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:37.142939 S2 appendEntries -> S4 ok term=8 success=true replyTerm=8
+21:00:37.143016 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.143218 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:37.167789 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:37.195385 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:37.219686 S2 appendEntries -> S1 RPC fail (no reply) term=8
+21:00:37.237039 S5 startElection -> Candidate term=10 lastLog=(0,0) votes=1
+21:00:37.252453 S1 startElection -> Candidate term=9 lastLog=(0,0) votes=1
+21:00:37.253306 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:37.255891 S3 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.255891 S4 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.256227 S0 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.256302 S2 appendEntries -> S4 ok term=8 success=true replyTerm=8
+21:00:37.256520 S2 appendEntries -> S3 ok term=8 success=true replyTerm=8
+21:00:37.256550 S2 appendEntries -> S0 ok term=8 success=true replyTerm=8
+21:00:37.259395 S5 RequestVote RPC failed to S6 term=10 (network/timeout)
+21:00:37.259592 S1 RequestVote RPC failed to S4 term=9 (network/timeout)
+21:00:37.264404 S2 appendEntries -> S1 RPC fail (no reply) term=8
+21:00:37.265764 S5 RequestVote RPC failed to S2 term=10 (network/timeout)
+21:00:37.280320 S1 RequestVote RPC failed to S3 term=9 (network/timeout)
+21:00:37.281049 S5 RequestVote RPC failed to S3 term=10 (network/timeout)
+21:00:37.281842 S5 RequestVote RPC failed to S4 term=10 (network/timeout)
+21:00:37.303610 S1 RequestVote RPC failed to S5 term=9 (network/timeout)
+21:00:37.313469 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:37.314391 S1 RequestVote RPC failed to S0 term=9 (network/timeout)
+21:00:37.322986 S2 appendEntries -> S5 RPC fail (no reply) term=8
+21:00:37.324106 S5 RequestVote RPC failed to S0 term=10 (network/timeout)
+21:00:37.329089 S1 RequestVote RPC failed to S2 term=9 (network/timeout)
+21:00:37.332108 S5 RequestVote RPC failed to S1 term=10 (network/timeout)
+21:00:37.339956 S1 RequestVote RPC failed to S6 term=9 (network/timeout)
+21:00:37.359590 S2 broadcastHeartbeats term=8 prev=(0,0) commit=0 -> 6 peers
+21:00:37.360224 S1 AppendEntries REJECT stale leader: args.Term=8 < currentTerm=9 leader=2 prev=(0,0) entries=0
+21:00:37.360233 S5 AppendEntries REJECT stale leader: args.Term=8 < currentTerm=10 leader=2 prev=(0,0) entries=0
+21:00:37.360315 S4 AppendEntries OK leader=2 term=8 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.360596 S2 appendEntries reply from S1: stale leader replyTerm=9 > myTerm=8 -> Follower
+21:00:37.360623 S2 appendEntries reply from S5: stale leader replyTerm=10 > myTerm=9 -> Follower
+21:00:37.360661 S2 appendEntries -> S4 ok term=8 success=true replyTerm=8
+21:00:37.361083 S2 appendEntries -> S6 RPC fail (no reply) term=8
+21:00:37.375627 S2 startElection -> Candidate term=11 lastLog=(0,0) votes=1
+21:00:37.376027 S5 RequestVote adopt term 10 -> 11 (was Candidate) cand=2
+21:00:37.376054 S5 RequestVote GRANT cand=2 term=11 (my lastIdx=0 lastTerm=0)
+21:00:37.376076 S1 RequestVote adopt term 9 -> 11 (was Candidate) cand=2
+21:00:37.376108 S1 RequestVote GRANT cand=2 term=11 (my lastIdx=0 lastTerm=0)
+21:00:37.376112 S4 RequestVote adopt term 8 -> 11 (was Follower) cand=2
+21:00:37.376136 S4 RequestVote GRANT cand=2 term=11 (my lastIdx=0 lastTerm=0)
+21:00:37.376290 S2 got vote from S5 votes=2/7 term=11
+21:00:37.376339 S2 got vote from S1 votes=3/7 term=11
+21:00:37.376382 S2 got vote from S4 votes=4/7 term=11
+21:00:37.376407 S2 WON ELECTION -> Leader term=11
+21:00:37.376424 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:37.376898 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.377005 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.377133 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.377195 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:37.377236 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:37.377369 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:37.383867 S2 appendEntries -> S3 RPC fail (no reply) term=8
+21:00:37.391509 S6 startElection -> Candidate term=10 lastLog=(0,0) votes=1
+21:00:37.402201 S6 RequestVote RPC failed to S0 term=10 (network/timeout)
+21:00:37.404086 S2 appendEntries -> S6 RPC fail (no reply) term=11
+21:00:37.419787 S6 RequestVote RPC failed to S2 term=10 (network/timeout)
+21:00:37.425120 S6 RequestVote RPC failed to S4 term=10 (network/timeout)
+21:00:37.434974 S2 appendEntries -> S0 RPC fail (no reply) term=8
+21:00:37.444104 S2 appendEntries -> S0 RPC fail (no reply) term=11
+21:00:37.444843 S6 RequestVote RPC failed to S5 term=10 (network/timeout)
+21:00:37.468803 S6 RequestVote RPC failed to S3 term=10 (network/timeout)
+21:00:37.472323 S2 appendEntries -> S3 RPC fail (no reply) term=11
+21:00:37.477991 S6 RequestVote RPC failed to S1 term=10 (network/timeout)
+21:00:37.483890 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:37.484526 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.484562 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.484578 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.484810 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:37.484842 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:37.484935 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:37.490122 S2 appendEntries -> S6 RPC fail (no reply) term=11
+21:00:37.538182 S2 appendEntries -> S3 RPC fail (no reply) term=11
+21:00:37.540510 S2 appendEntries -> S0 RPC fail (no reply) term=11
+21:00:37.595229 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:37.596349 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.596440 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.597055 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:37.597088 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:37.597511 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.597759 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:37.636885 S2 appendEntries -> S0 RPC fail (no reply) term=11
+21:00:37.639236 S2 appendEntries -> S6 RPC fail (no reply) term=11
+21:00:37.673950 S2 appendEntries -> S3 RPC fail (no reply) term=11
+21:00:37.706062 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:37.707158 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.707301 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.707451 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.707527 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:37.707617 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:37.707763 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:37.747835 S2 appendEntries -> S6 RPC fail (no reply) term=11
+21:00:37.752588 S0 startElection -> Candidate term=9 lastLog=(0,0) votes=1
+21:00:37.765697 S2 appendEntries -> S3 RPC fail (no reply) term=11
+21:00:37.768623 S2 appendEntries -> S0 RPC fail (no reply) term=11
+21:00:37.771245 S0 RequestVote RPC failed to S5 term=9 (network/timeout)
+21:00:37.796112 S0 RequestVote RPC failed to S4 term=9 (network/timeout)
+21:00:37.798599 S3 startElection -> Candidate term=9 lastLog=(0,0) votes=1
+21:00:37.799160 S3 RequestVote RPC failed to S6 term=9 (network/timeout)
+21:00:37.807510 S0 RequestVote RPC failed to S2 term=9 (network/timeout)
+21:00:37.815306 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:37.816237 S0 AppendEntries adopt higher term 9 -> 11 (was Candidate) leader=2
+21:00:37.816277 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.816293 S0 step down to Follower (AppendEntries) term=11 leader=2
+21:00:37.816315 S0 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.816334 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.816237 S6 AppendEntries adopt higher term 10 -> 11 (was Candidate) leader=2
+21:00:37.816401 S6 step down to Follower (AppendEntries) term=11 leader=2
+21:00:37.816423 S6 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.816585 S3 AppendEntries adopt higher term 9 -> 11 (was Candidate) leader=2
+21:00:37.816619 S3 step down to Follower (AppendEntries) term=11 leader=2
+21:00:37.816590 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:37.816680 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.816707 S2 appendEntries -> S6 ok term=11 success=true replyTerm=11
+21:00:37.816776 S2 appendEntries -> S0 ok term=11 success=true replyTerm=11
+21:00:37.816826 S3 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.816941 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:37.816966 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:37.817124 S2 appendEntries -> S3 ok term=11 success=true replyTerm=11
+21:00:37.925542 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:37.926737 S0 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.926827 S3 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.927006 S6 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.927034 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.927051 S2 appendEntries -> S0 ok term=11 success=true replyTerm=11
+21:00:37.927082 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.927096 S2 appendEntries -> S3 ok term=11 success=true replyTerm=11
+21:00:37.927352 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:37.927369 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:37.927399 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:37.927450 S2 appendEntries -> S6 ok term=11 success=true replyTerm=11
+21:00:37.927609 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:38.037596 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:38.038329 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.038445 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.038561 S6 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.038616 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.038679 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:38.038798 S2 appendEntries -> S6 ok term=11 success=true replyTerm=11
+21:00:38.038849 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:38.038963 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:38.038973 S3 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.039223 S2 appendEntries -> S3 ok term=11 success=true replyTerm=11
+21:00:38.039452 S0 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.039767 S2 appendEntries -> S0 ok term=11 success=true replyTerm=11
+21:00:38.148138 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:38.148922 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.148987 S3 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.149123 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.149191 S2 appendEntries -> S3 ok term=11 success=true replyTerm=11
+21:00:38.149273 S0 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.149329 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:38.149405 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+21:00:38.149501 S2 appendEntries -> S0 ok term=11 success=true replyTerm=11
+21:00:38.149940 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.149946 S6 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.150146 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:38.150202 S2 appendEntries -> S6 ok term=11 success=true replyTerm=11
+21:00:38.256748 S2 broadcastHeartbeats term=11 prev=(0,0) commit=0 -> 6 peers
+21:00:38.258452 S1 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.258569 S6 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.259892 S2 appendEntries -> S1 ok term=11 success=true replyTerm=11
+21:00:38.259980 S2 appendEntries -> S6 ok term=11 success=true replyTerm=11
+21:00:38.260045 S3 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.260345 S5 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.260373 S0 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.260413 S2 appendEntries -> S3 ok term=11 success=true replyTerm=11
+21:00:38.260417 S4 AppendEntries OK leader=2 term=11 prev=(0,0) appended=0 lastLogIdx=0
+21:00:38.260785 S2 appendEntries -> S0 ok term=11 success=true replyTerm=11
+21:00:38.260875 S2 appendEntries -> S5 ok term=11 success=true replyTerm=11
+21:00:38.260921 S2 appendEntries -> S4 ok term=11 success=true replyTerm=11
+  ... Passed --   6.0  7  594  111884    0
+21:00:38.309882 S0 Kill()
+21:00:38.309911 S1 Kill()
+21:00:38.309925 S2 Kill()
+21:00:38.309936 S3 Kill()
+21:00:38.310004 S4 Kill()
+21:00:38.310014 S5 Kill()
+21:00:38.310032 S6 Kill()
+--- PASS: TestManyElections3A (6.05s)
+PASS
+ok  	cs351/raft	15.295s
